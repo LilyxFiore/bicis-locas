@@ -4,18 +4,17 @@ function validateForm(){
 
 function validateName(){
   var name = document.getElementById("name").value;
-  if(name.length==0 || /^\s+|\s+$/.test(name)){
-    alert ("Completar nombre");
-  }
-  else if (/[0-9]/.test(name)){
-    alert("Solo letras");
-  }
-  else if (!(/[^a-z]+([a-z]{1,})/.test(name))){
-    alert("Empezar con mayúscula el nombre");
-  }
-  else{
-    validateLastName();
-  }
+  if(!(validateEmpty(name,"nombre"))){
+
+    else if (/[0-9]/.test(name)){
+      alert("Solo letras");
+    }
+    else if (!(/[^a-z]+([a-z]{1,})/.test(name))){
+      alert("Empezar con mayúscula el nombre");
+    }
+    else{
+      validateLastName();
+    }}
 }
 
 function validateLastName(){
@@ -74,4 +73,11 @@ function validateSelection(){
   else {
     alert ("Usted a elegido: "+ op);
   }
+}
+
+function validateEmpty(x,y){
+  if(x.length==0 || /^\s+|\s+$/.test(x)){
+    alert ("Completar "+y);
+  }
+  return true;
 }
