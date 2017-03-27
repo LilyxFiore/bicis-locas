@@ -5,7 +5,7 @@ function validateForm(){
 
   /** Validacion para nombre**/
   if(name.length==0 || /^\s+|\s+$/.test(name)){
-    alert ("Ingrese nombre"); return false;
+    alert ("Ingrese nombre"); return false;   
   }
   else if (/[0-9]/.test(name)){
     alert("Debe contener solo letras"); return false;
